@@ -36,6 +36,7 @@ public class CotCalculator extends FunctionCalculator {
         }
 
         double result = cosCalculator.calculate(x) / sinCalculator.calculate(x);
+        writeCalculationResult(x, result);
         return result;
     }
 
@@ -53,6 +54,7 @@ public class CotCalculator extends FunctionCalculator {
         }
 
         double result = cosCalculator.calculate(x, epsilon) / sinCalculator.calculate(x, epsilon);
+        writeCalculationResult(x, result);
         return result;
     }
 }

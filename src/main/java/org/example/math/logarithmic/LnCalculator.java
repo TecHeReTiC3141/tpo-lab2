@@ -32,6 +32,7 @@ public class LnCalculator extends FunctionCalculator {
         }
 
         double result = seriesExpander.calculate(x, 0.001);
+        writeCalculationResult(x, result);
         return result;
     }
 
@@ -49,6 +50,7 @@ public class LnCalculator extends FunctionCalculator {
         }
 
         double result = seriesExpander.calculate(x, epsilon);
+        writeCalculationResult(x, result);
         return result;
     }
 }

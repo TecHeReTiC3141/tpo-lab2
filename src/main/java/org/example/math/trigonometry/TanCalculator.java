@@ -36,6 +36,7 @@ public class TanCalculator extends FunctionCalculator {
         }
 
         double result = sinCalculator.calculate(x) / cosCalculator.calculate(x);
+        writeCalculationResult(x, result);
         return result;
     }
 
@@ -53,6 +54,7 @@ public class TanCalculator extends FunctionCalculator {
         }
 
         double result = sinCalculator.calculate(x, epsilon) / cosCalculator.calculate(x, epsilon);
+        writeCalculationResult(x, result);
         return result;
     }
 }

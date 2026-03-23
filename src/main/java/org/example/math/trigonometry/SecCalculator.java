@@ -33,6 +33,7 @@ public class SecCalculator extends FunctionCalculator {
         }
 
         double result = 1 / cosCalculator.calculate(x);
+        writeCalculationResult(x, result);
         return result;
     }
 
@@ -50,6 +51,7 @@ public class SecCalculator extends FunctionCalculator {
         }
 
         double result = 1 / cosCalculator.calculate(x, epsilon);
+        writeCalculationResult(x, result);
         return result;
     }
 }

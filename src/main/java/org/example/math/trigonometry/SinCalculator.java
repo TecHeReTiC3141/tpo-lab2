@@ -34,6 +34,7 @@ public class SinCalculator extends FunctionCalculator {
         double result = seriesExpander.calculate(x);
         result = Math.min(result, 1.0);
         result = Math.max(result, -1.0);
+        writeCalculationResult(x, result);
         return result;
     }
 
@@ -53,6 +54,7 @@ public class SinCalculator extends FunctionCalculator {
         double result = seriesExpander.calculate(x, epsilon);
         result = Math.min(result, 1.0);
         result = Math.max(result, -1.0);
+        writeCalculationResult(x, result);
         return result;
     }
 }

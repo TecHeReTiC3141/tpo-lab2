@@ -44,6 +44,7 @@ public class CosCalculator extends FunctionCalculator {
         } else {
             result = -Math.sqrt(radical); // negative result
         }
+        writeCalculationResult(x, result);
         return result;
     }
 
@@ -71,6 +72,7 @@ public class CosCalculator extends FunctionCalculator {
         } else {
             result = -Math.sqrt(radical); // negative result
         }
+        writeCalculationResult(x, result);
         return result;
     }
 }

@@ -35,8 +35,9 @@ public class LogCalculator extends FunctionCalculator {
                     "Argument x = %f is out of tolerance range for the '%s' function.",
                     x, getFunction().getName()));
         }
-
+        
         double result = lnCalculator.calculate(x) / lnCalculator.calculate(base);
+        writeCalculationResult(x, result);
         return result;
     }
 
@@ -48,6 +49,7 @@ public class LogCalculator extends FunctionCalculator {
         }
 
         double result = lnCalculator.calculate(x, epsilon) / lnCalculator.calculate(base, epsilon);
+        writeCalculationResult(x, result);
         return result;
     }
 }

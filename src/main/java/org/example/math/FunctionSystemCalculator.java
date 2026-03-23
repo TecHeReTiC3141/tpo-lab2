@@ -56,10 +56,10 @@ public class FunctionSystemCalculator extends FunctionCalculator {
 
     @Override
     public double calculate(double x, double epsilon) {
-        if (!checkToleranceHit(x)) {
-            return Double.NaN;
-        }
         try {
+            if (!checkToleranceHit(x)) {
+                return Double.NaN;
+            }
             if (x > 0) {
                 double result = (((((math.log(x, 10, epsilon) + math.log(x, 2, epsilon)) + math.log(x, 3, epsilon))
                         - ((math.log(x, 5, epsilon) + math.log(x, 10, epsilon)) / (math.log(x, 10, epsilon) + math.log(x, 2, epsilon))))
