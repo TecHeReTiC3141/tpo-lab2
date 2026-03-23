@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.example.unit.calculator.TrigonometryTest" tests="74" skipped="0" failures="0" errors="0" timestamp="2026-03-23T06:01:12.726Z" hostname="DESKTOP-CMLMMMG" time="0.317">
+  <properties/>
+  <testcase name="[1] NaN" classname="org.example.unit.calculator.TrigonometryTest" time="0.011"/>
+  <testcase name="[2] Infinity" classname="org.example.unit.calculator.TrigonometryTest" time="0.001"/>
+  <testcase name="[3] -Infinity" classname="org.example.unit.calculator.TrigonometryTest" time="0.002"/>
+  <testcase name="[4] 1.5708" classname="org.example.unit.calculator.TrigonometryTest" time="0.002"/>
+  <testcase name="[5] -1.5708" classname="org.example.unit.calculator.TrigonometryTest" time="0.001"/>
+  <testcase name="[1] 0.0, 1.0, 1e-3, 1e-3" classname="org.example.unit.calculator.TrigonometryTest" time="0.001"/>
+  <testcase name="[2] 6.2831, 1.0, 1e-3, 1e-3" classname="org.example.unit.calculator.TrigonometryTest" time="0.001"/>
+  <testcase name="[3] 3.1416, -1.0, 1e-3, 1e-3" classname="org.example.unit.calculator.TrigonometryTest" time="0.0"/>
+  <testcase name="[4] 0.7854, 1.4142, 1e-3, 1e-3" classname="org.example.unit.calculator.TrigonometryTest" time="0.001"/>
+  <testcase name="[5] 0.5236, 1.1547, 1e-3, 1e-3" classname="org.example.unit.calculator.TrigonometryTest" time="0.001"/>
+  <testcase name="[1] NaN" classname="org.example.unit.calculator.TrigonometryTest" time="0.005"/>
+  <testcase name="[2] Infinity" classname="org.example.unit.calculator.TrigonometryTest" time="0.001"/>
+  <testcase name="[3] -Infinity" classname="org.example.unit.calculator.TrigonometryTest" time="0.001"/>
+  <testcase name="[4] 0.0" classname="org.example.unit.calculator.TrigonometryTest" time="0.002"/>
+  <testcase name="[5] 3.1416" classname="org.example.unit.calculator.TrigonometryTest" time="0.003"/>
+  <testcase name="Cos should throw IllegalArgumentException when epsilon is negative" classname="org.example.unit.calculator.TrigonometryTest" time="0.004"/>
+  <testcase name="[1] 1.5708, 1.0, 1e-3, 1e-3" classname="org.example.unit.calculator.TrigonometryTest" time="0.001"/>
+  <testcase name="[2] 4.7124, -1.0, 1e-3, 1e-3" classname="org.example.unit.calculator.TrigonometryTest" time="0.001"/>
+  <testcase name="[3] -1.5708, -1.0, 1e-3, 1e-3" classname="org.example.unit.calculator.TrigonometryTest" time="0.001"/>
+  <testcase name="[4] 0.7854, 1.4142, 1e-3, 1e-3" classname="org.example.unit.calculator.TrigonometryTest" time="0.001"/>
+  <testcase name="[5] 0.5236, 2.0, 1e-3, 1e-3" classname="org.example.unit.calculator.TrigonometryTest" time="0.001"/>
+  <testcase name="[1] 0.0, 0.0, 1e-3, 1e-6" classname="org.example.unit.calculator.TrigonometryTest" time="0.001"/>
+  <testcase name="[2] 6.2831, 0.0, 1e-3, 1e-6" classname="org.example.unit.calculator.TrigonometryTest" time="0.001"/>
+  <testcase name="[3] 3.1416, 0.0, 1e-3, 1e-6" classname="org.example.unit.calculator.TrigonometryTest" time="0.001"/>
+  <testcase name="[4] 1.5708, 1.0, 1e-3, 1e-6" classname="org.example.unit.calculator.TrigonometryTest" time="0.0"/>
+  <testcase name="[5] 4.7124, -1.0, 1e-3, 1e-6" classname="org.example.unit.calculator.TrigonometryTest" time="0.0"/>
+  <testcase name="[6] -1.5708, -1.0, 1e-3, 1e-6" classname="org.example.unit.calculator.TrigonometryTest" time="0.0"/>
+  <testcase name="[7] 0.7854, 0.7071, 1e-3, 1e-6" classname="org.example.unit.calculator.TrigonometryTest" time="0.0"/>
+  <testcase name="[8] 0.5236, 0.5, 1e-3, 1e-6" classname="org.example.unit.calculator.TrigonometryTest" time="0.0"/>
+  <testcase name="[9] 100, NaN, 1e-2, 1e-6" classname="org.example.unit.calculator.TrigonometryTest" time="0.007"/>
+  <testcase name="[10] 500, NaN, 1e-2, 1e-6" classname="org.example.unit.calculator.TrigonometryTest" time="0.008"/>
+  <testcase name="[11] 1000, NaN, 1e-2, 1e-6" classname="org.example.unit.calculator.TrigonometryTest" time="0.007"/>
+  <testcase name="[1] 0, 1, 1e-3, 1e-3" classname="org.example.unit.calculator.TrigonometryTest" time="0.001"/>
+  <testcase name="[2] 6.2831, 1, 1e-3, 1e-3" classname="org.example.unit.calculator.TrigonometryTest" time="0.001"/>
+  <testcase name="[3] 3.1416, -1, 1e-3, 1e-3" classname="org.example.unit.calculator.TrigonometryTest" time="0.001"/>
+  <testcase name="[4] 1.5708, 0, 1e-3, 1e-3" classname="org.example.unit.calculator.TrigonometryTest" time="0.001"/>
+  <testcase name="[5] 4.71238898, 0, 1e-3, 1e-4" classname="org.example.unit.calculator.TrigonometryTest" time="0.0"/>
+  <testcase name="[6] -1.5708, 0, 1e-3, 1e-3" classname="org.example.unit.calculator.TrigonometryTest" time="0.001"/>
+  <testcase name="[7] 0.7854, 0.7071, 1e-3, 1e-3" classname="org.example.unit.calculator.TrigonometryTest" time="0.001"/>
+  <testcase name="[8] 0.5236, 0.866, 1e-3, 1e-3" classname="org.example.unit.calculator.TrigonometryTest" time="0.001"/>
+  <testcase name="[9] 100, NaN, 1e-2, 1e-6" classname="org.example.unit.calculator.TrigonometryTest" time="0.022"/>
+  <testcase name="[10] 500, NaN, 1e-2, 1e-6" classname="org.example.unit.calculator.TrigonometryTest" time="0.014"/>
+  <testcase name="[11] 1000, NaN, 1e-2, 1e-6" classname="org.example.unit.calculator.TrigonometryTest" time="0.007"/>
+  <testcase name="Csc should throw IllegalArgumentException when epsilon is negative" classname="org.example.unit.calculator.TrigonometryTest" time="0.003"/>
+  <testcase name="Tan should throw IllegalArgumentException when epsilon is negative" classname="org.example.unit.calculator.TrigonometryTest" time="0.003"/>
+  <testcase name="Should throw IllegalArgumentException when epsilon is negative for sin" classname="org.example.unit.calculator.TrigonometryTest" time="0.004"/>
+  <testcase name="[1] 0.0, 0.0, 1e-3, 1e-6" classname="org.example.unit.calculator.TrigonometryTest" time="0.002"/>
+  <testcase name="[2] 6.2831, 0.0, 1e-3, 1e-6" classname="org.example.unit.calculator.TrigonometryTest" time="0.001"/>
+  <testcase name="[3] 3.1416, 0.0, 1e-3, 1e-6" classname="org.example.unit.calculator.TrigonometryTest" time="0.001"/>
+  <testcase name="[4] 0.7854, 1.0, 1e-3, 1e-6" classname="org.example.unit.calculator.TrigonometryTest" time="0.001"/>
+  <testcase name="[5] 0.5236, 0.5774, 1e-3, 1e-6" classname="org.example.unit.calculator.TrigonometryTest" time="0.002"/>
+  <testcase name="Cot should throw IllegalArgumentException when epsilon is negative" classname="org.example.unit.calculator.TrigonometryTest" time="0.003"/>
+  <testcase name="[1] NaN" classname="org.example.unit.calculator.TrigonometryTest" time="0.008"/>
+  <testcase name="[2] Infinity" classname="org.example.unit.calculator.TrigonometryTest" time="0.001"/>
+  <testcase name="[3] -Infinity" classname="org.example.unit.calculator.TrigonometryTest" time="0.002"/>
+  <testcase name="[4] 1.5708" classname="org.example.unit.calculator.TrigonometryTest" time="0.002"/>
+  <testcase name="[5] -1.5708" classname="org.example.unit.calculator.TrigonometryTest" time="0.002"/>
+  <testcase name="[1] 1.5708, 0.0, 1e-3, 1e-3" classname="org.example.unit.calculator.TrigonometryTest" time="0.001"/>
+  <testcase name="[2] 4.7124, 0.0, 1e-2, 1e-3" classname="org.example.unit.calculator.TrigonometryTest" time="0.001"/>
+  <testcase name="[3] -1.5708, 0.0, 1e-3, 1e-3" classname="org.example.unit.calculator.TrigonometryTest" time="0.001"/>
+  <testcase name="[4] 0.7854, 1.0, 1e-3, 1e-3" classname="org.example.unit.calculator.TrigonometryTest" time="0.001"/>
+  <testcase name="[5] 0.5236, 1.7320, 1e-3, 1e-3" classname="org.example.unit.calculator.TrigonometryTest" time="0.001"/>
+  <testcase name="[1] NaN" classname="org.example.unit.calculator.TrigonometryTest" time="0.006"/>
+  <testcase name="[2] Infinity" classname="org.example.unit.calculator.TrigonometryTest" time="0.001"/>
+  <testcase name="[3] -Infinity" classname="org.example.unit.calculator.TrigonometryTest" time="0.002"/>
+  <testcase name="[4] 0.0" classname="org.example.unit.calculator.TrigonometryTest" time="0.003"/>
+  <testcase name="[5] 3.1416" classname="org.example.unit.calculator.TrigonometryTest" time="0.002"/>
+  <testcase name="[1] NaN" classname="org.example.unit.calculator.TrigonometryTest" time="0.005"/>
+  <testcase name="[2] Infinity" classname="org.example.unit.calculator.TrigonometryTest" time="0.002"/>
+  <testcase name="[3] -Infinity" classname="org.example.unit.calculator.TrigonometryTest" time="0.001"/>
+  <testcase name="[1] NaN" classname="org.example.unit.calculator.TrigonometryTest" time="0.006"/>
+  <testcase name="[2] Infinity" classname="org.example.unit.calculator.TrigonometryTest" time="0.002"/>
+  <testcase name="[3] -Infinity" classname="org.example.unit.calculator.TrigonometryTest" time="0.003"/>
+  <testcase name="Sec should throw IllegalArgumentException when epsilon is negative" classname="org.example.unit.calculator.TrigonometryTest" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

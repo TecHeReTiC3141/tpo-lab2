@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.example.unit.calculator.LogarithmTest" tests="26" skipped="0" failures="0" errors="0" timestamp="2026-03-23T06:01:07.647Z" hostname="DESKTOP-CMLMMMG" time="0.392">
+  <properties/>
+  <testcase name="[1] NaN" classname="org.example.unit.calculator.LogarithmTest" time="0.16"/>
+  <testcase name="[2] Infinity" classname="org.example.unit.calculator.LogarithmTest" time="0.003"/>
+  <testcase name="[3] -Infinity" classname="org.example.unit.calculator.LogarithmTest" time="0.002"/>
+  <testcase name="[4] -1.0" classname="org.example.unit.calculator.LogarithmTest" time="0.006"/>
+  <testcase name="[1] 0.1, 2.0, -3.3219, 1e-3, 1e-6" classname="org.example.unit.calculator.LogarithmTest" time="0.01"/>
+  <testcase name="[2] 0.5, 2.0, -1.0, 1e-3, 1e-6" classname="org.example.unit.calculator.LogarithmTest" time="0.002"/>
+  <testcase name="[3] 1.25, 4.0, 0.1610, 1e-3, 1e-6" classname="org.example.unit.calculator.LogarithmTest" time="0.003"/>
+  <testcase name="[4] 2.7183, 2.7183, 1.0, 1e-3, 1e-6" classname="org.example.unit.calculator.LogarithmTest" time="0.004"/>
+  <testcase name="[5] 10, 10.0, 1.0, 1e-2, 1e-6" classname="org.example.unit.calculator.LogarithmTest" time="0.004"/>
+  <testcase name="[6] 100, 14.0, 1.7450, 1e-3, 1e-6" classname="org.example.unit.calculator.LogarithmTest" time="0.005"/>
+  <testcase name="[7] 1000, 15.0, 2.5508, 1e-2, 1e-6" classname="org.example.unit.calculator.LogarithmTest" time="0.001"/>
+  <testcase name="[1] NaN, 2.0" classname="org.example.unit.calculator.LogarithmTest" time="0.009"/>
+  <testcase name="[2] Infinity, 2.0" classname="org.example.unit.calculator.LogarithmTest" time="0.005"/>
+  <testcase name="[3] -Infinity, 2.0" classname="org.example.unit.calculator.LogarithmTest" time="0.004"/>
+  <testcase name="[4] -1.0, 2.0" classname="org.example.unit.calculator.LogarithmTest" time="0.004"/>
+  <testcase name="[1] NaN" classname="org.example.unit.calculator.LogarithmTest" time="0.008"/>
+  <testcase name="[2] Infinity" classname="org.example.unit.calculator.LogarithmTest" time="0.003"/>
+  <testcase name="[3] -Infinity" classname="org.example.unit.calculator.LogarithmTest" time="0.004"/>
+  <testcase name="[4] -1.0" classname="org.example.unit.calculator.LogarithmTest" time="0.003"/>
+  <testcase name="Ln should throw IllegalArgumentException when epsilon is negative" classname="org.example.unit.calculator.LogarithmTest" time="0.003"/>
+  <testcase name="[1] 0.5, -0.6931, 1e-3, 1e-6" classname="org.example.unit.calculator.LogarithmTest" time="0.005"/>
+  <testcase name="[2] 1.25, 0.2231, 1e-3, 1e-6" classname="org.example.unit.calculator.LogarithmTest" time="0.002"/>
+  <testcase name="[3] 2.7183, 1.0, 1e-3, 1e-6" classname="org.example.unit.calculator.LogarithmTest" time="0.003"/>
+  <testcase name="[4] 100, 4.6051, 1e-3, 1e-6" classname="org.example.unit.calculator.LogarithmTest" time="0.003"/>
+  <testcase name="[5] 500, 6.2146, 1e-2, 1e-6" classname="org.example.unit.calculator.LogarithmTest" time="0.003"/>
+  <testcase name="[6] 1000, 6.9078, 1e-2, 1e-6" classname="org.example.unit.calculator.LogarithmTest" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

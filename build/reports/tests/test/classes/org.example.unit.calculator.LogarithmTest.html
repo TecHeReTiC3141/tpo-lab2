@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - LogarithmTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>LogarithmTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/org.example.unit.calculator.html">org.example.unit.calculator</a> &gt; LogarithmTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">26</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.262s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="tab-container">
+<ul class="tabLinks">
+<li>
+<a href="#">Tests</a>
+</li>
+</ul>
+<div class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Method name</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">Ln should throw IllegalArgumentException when epsilon is negative</td>
+<td class="success">lnCalculateWithNegativeEpsilonShouldThrowIllegalArgumentException()</td>
+<td class="success">0.003s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[1] 0.5, -0.6931, 1e-3, 1e-6</td>
+<td class="success">lnCalculatorTest(double, double, double, double)[1]</td>
+<td class="success">0.005s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[2] 1.25, 0.2231, 1e-3, 1e-6</td>
+<td class="success">lnCalculatorTest(double, double, double, double)[2]</td>
+<td class="success">0.002s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[3] 2.7183, 1.0, 1e-3, 1e-6</td>
+<td class="success">lnCalculatorTest(double, double, double, double)[3]</td>
+<td class="success">0.003s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[4] 100, 4.6051, 1e-3, 1e-6</td>
+<td class="success">lnCalculatorTest(double, double, double, double)[4]</td>
+<td class="success">0.003s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[5] 500, 6.2146, 1e-2, 1e-6</td>
+<td class="success">lnCalculatorTest(double, double, double, double)[5]</td>
+<td class="success">0.003s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[6] 1000, 6.9078, 1e-2, 1e-6</td>
+<td class="success">lnCalculatorTest(double, double, double, double)[6]</td>
+<td class="success">0.003s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[1] NaN</td>
+<td class="success">lnCalculatorToleranceTest(double)[1]</td>
+<td class="success">0.008s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[2] Infinity</td>
+<td class="success">lnCalculatorToleranceTest(double)[2]</td>
+<td class="success">0.003s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[3] -Infinity</td>
+<td class="success">lnCalculatorToleranceTest(double)[3]</td>
+<td class="success">0.004s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[4] -1.0</td>
+<td class="success">lnCalculatorToleranceTest(double)[4]</td>
+<td class="success">0.003s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[1] NaN</td>
+<td class="success">logCalculatorInvalidBaseTest(double)[1]</td>
+<td class="success">0.160s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[2] Infinity</td>
+<td class="success">logCalculatorInvalidBaseTest(double)[2]</td>
+<td class="success">0.003s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[3] -Infinity</td>
+<td class="success">logCalculatorInvalidBaseTest(double)[3]</td>
+<td class="success">0.002s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[4] -1.0</td>
+<td class="success">logCalculatorInvalidBaseTest(double)[4]</td>
+<td class="success">0.006s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[1] 0.1, 2.0, -3.3219, 1e-3, 1e-6</td>
+<td class="success">logCalculatorTest(double, double, double, double, double)[1]</td>
+<td class="success">0.010s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[2] 0.5, 2.0, -1.0, 1e-3, 1e-6</td>
+<td class="success">logCalculatorTest(double, double, double, double, double)[2]</td>
+<td class="success">0.002s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[3] 1.25, 4.0, 0.1610, 1e-3, 1e-6</td>
+<td class="success">logCalculatorTest(double, double, double, double, double)[3]</td>
+<td class="success">0.003s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[4] 2.7183, 2.7183, 1.0, 1e-3, 1e-6</td>
+<td class="success">logCalculatorTest(double, double, double, double, double)[4]</td>
+<td class="success">0.004s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[5] 10, 10.0, 1.0, 1e-2, 1e-6</td>
+<td class="success">logCalculatorTest(double, double, double, double, double)[5]</td>
+<td class="success">0.004s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[6] 100, 14.0, 1.7450, 1e-3, 1e-6</td>
+<td class="success">logCalculatorTest(double, double, double, double, double)[6]</td>
+<td class="success">0.005s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[7] 1000, 15.0, 2.5508, 1e-2, 1e-6</td>
+<td class="success">logCalculatorTest(double, double, double, double, double)[7]</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[1] NaN, 2.0</td>
+<td class="success">logCalculatorToleranceTest(double, double)[1]</td>
+<td class="success">0.009s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[2] Infinity, 2.0</td>
+<td class="success">logCalculatorToleranceTest(double, double)[2]</td>
+<td class="success">0.005s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[3] -Infinity, 2.0</td>
+<td class="success">logCalculatorToleranceTest(double, double)[3]</td>
+<td class="success">0.004s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[4] -1.0, 2.0</td>
+<td class="success">logCalculatorToleranceTest(double, double)[4]</td>
+<td class="success">0.004s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="https://www.gradle.org">Gradle 8.14</a> at Mar 23, 2026, 9:01:13 AM</p>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>SecCalculator.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">app</a> &gt; <a href="index.source.html" class="el_package">org.example.math.trigonometry</a> &gt; <span class="el_source">SecCalculator.java</span></div><h1>SecCalculator.java</h1><pre class="source lang-java linenums">package org.example.math.trigonometry;
+
+import org.example.math.common.FunctionCalculator;
+import org.example.math.common.FunctionConstants;
+import org.example.math.common.FunctionType;
+import org.example.math.exception.ToleranceException;
+
+public class SecCalculator extends FunctionCalculator {
+    private final CosCalculator cosCalculator;
+
+    public SecCalculator() {
+<span class="fc" id="L12">        super(FunctionType.SEC);</span>
+<span class="fc" id="L13">        this.cosCalculator = new CosCalculator();</span>
+<span class="fc" id="L14">    }</span>
+
+    public SecCalculator(CosCalculator cosCalculator) {
+<span class="fc" id="L17">        super(FunctionType.SEC);</span>
+<span class="fc" id="L18">        this.cosCalculator = cosCalculator;</span>
+<span class="fc" id="L19">    }</span>
+
+    @Override
+    protected boolean checkToleranceHit(double x) {
+<span class="pc bpc" id="L23" title="1 of 4 branches missed.">        return Double.isFinite(x) &amp;&amp; !Double.isNaN(x)</span>
+<span class="fc bfc" id="L24" title="All 2 branches covered.">                &amp;&amp; (Math.abs(cosCalculator.calculate(x)) &gt; FunctionConstants.SINGULARITY_EPSILON);</span>
+    }
+
+    @Override
+    public double calculate(double x) {
+<span class="fc bfc" id="L29" title="All 2 branches covered.">        if (!checkToleranceHit(x)) {</span>
+<span class="fc" id="L30">            throw new ToleranceException(String.format(</span>
+                    &quot;Argument x = %f is out of tolerance range for the '%s' function.&quot;,
+<span class="fc" id="L32">                    x, getFunction().getName()));</span>
+        }
+
+<span class="fc" id="L35">        double result = 1 / cosCalculator.calculate(x);</span>
+<span class="fc" id="L36">        return result;</span>
+    }
+
+    @Override
+    public double calculate(double x, double epsilon) {
+<span class="fc bfc" id="L41" title="All 2 branches covered.">        if (!checkToleranceHit(x)) {</span>
+<span class="fc" id="L42">            throw new ToleranceException(String.format(</span>
+                    &quot;Argument x = %f is out of tolerance range for the '%s' function.&quot;,
+<span class="fc" id="L44">                    x, getFunction().getName()));</span>
+        }
+
+<span class="fc bfc" id="L47" title="All 2 branches covered.">        if (epsilon &lt; 0) {</span>
+<span class="fc" id="L48">            throw new IllegalArgumentException(</span>
+<span class="fc" id="L49">                    String.format(&quot;Cannot calculate a function with negative accuracy: epsilon = %f&quot;, epsilon));</span>
+        }
+
+<span class="fc" id="L52">        double result = 1 / cosCalculator.calculate(x, epsilon);</span>
+<span class="fc" id="L53">        return result;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.13.202504020838</span></div></body></html>

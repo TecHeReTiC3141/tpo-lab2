@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>FunctionCalculator.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">app</a> &gt; <a href="index.source.html" class="el_package">org.example.math.common</a> &gt; <span class="el_source">FunctionCalculator.java</span></div><h1>FunctionCalculator.java</h1><pre class="source lang-java linenums">package org.example.math.common;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardOpenOption;
+
+import org.example.math.exception.ToleranceException;
+
+import com.opencsv.CSVWriter;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@AllArgsConstructor
+public abstract class FunctionCalculator {
+<span class="fc" id="L17">    private static final Path CSV_PATH = Path.of(&quot;output&quot;, &quot;result_log.csv&quot;);</span>
+    private static CSVWriter csvWriter;
+
+    static {
+<span class="fc" id="L21">        initializeCsvWriter();</span>
+<span class="fc" id="L22">        Runtime.getRuntime().addShutdownHook(new Thread(FunctionCalculator::closeCsvWriter));</span>
+<span class="fc" id="L23">    }</span>
+
+    @Getter
+    private final FunctionType function;
+
+    private static void initializeCsvWriter() {
+        try {
+<span class="fc" id="L30">            Path parentPath = CSV_PATH.getParent();</span>
+<span class="pc bpc" id="L31" title="1 of 2 branches missed.">            if (parentPath != null) {</span>
+<span class="fc" id="L32">                Files.createDirectories(parentPath);</span>
+            }
+
+<span class="fc" id="L35">            csvWriter = new CSVWriter(Files.newBufferedWriter(</span>
+                    CSV_PATH,
+                    StandardOpenOption.CREATE,
+                    StandardOpenOption.TRUNCATE_EXISTING));
+
+<span class="fc" id="L40">            csvWriter.writeNext(new String[]{&quot;module_name&quot;, &quot;x&quot;, &quot;result&quot;}, false);</span>
+<span class="fc" id="L41">            csvWriter.flush();</span>
+<span class="nc" id="L42">        } catch (IOException e) {</span>
+<span class="nc" id="L43">            csvWriter = null;</span>
+<span class="fc" id="L44">        }</span>
+<span class="fc" id="L45">    }</span>
+
+    private static void closeCsvWriter() {
+        try {
+<span class="fc" id="L49">            csvWriter.close();</span>
+<span class="nc" id="L50">        } catch (IOException e) {</span>
+            // Never happens.
+<span class="fc" id="L52">        }</span>
+<span class="fc" id="L53">    }</span>
+
+    protected void writeCalculationResult(double x, double result) {
+        try {
+<span class="fc" id="L57">            csvWriter.writeNext(new String[]{getClass().getSimpleName(), Double.toString(x), Double.toString(result)}, false);</span>
+<span class="fc" id="L58">            csvWriter.flush();</span>
+<span class="nc" id="L59">        } catch (IOException e) {</span>
+            // Never happens.
+<span class="fc" id="L61">        }</span>
+<span class="fc" id="L62">    }</span>
+
+    protected abstract boolean checkToleranceHit(double x);
+
+    public abstract double calculate(double x);
+
+    public double calculate(double x, double epsilon) {
+<span class="fc bfc" id="L69" title="All 2 branches covered.">        if (!checkToleranceHit(x)) {</span>
+<span class="fc" id="L70">            throw new ToleranceException(String</span>
+<span class="fc" id="L71">                    .format(&quot;Argument x = %f is out of tolerance range for the '%s' function.&quot;, x, function.getName()));</span>
+        }
+
+<span class="fc" id="L74">        return calculate(x);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.13.202504020838</span></div></body></html>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MyMath.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">app</a> &gt; <a href="index.source.html" class="el_package">org.example.math</a> &gt; <span class="el_source">MyMath.java</span></div><h1>MyMath.java</h1><pre class="source lang-java linenums">package org.example.math;
+
+import org.example.math.logarithmic.LnCalculator;
+import org.example.math.logarithmic.LogCalculator;
+import org.example.math.trigonometry.CosCalculator;
+import org.example.math.trigonometry.CotCalculator;
+import org.example.math.trigonometry.CscCalculator;
+import org.example.math.trigonometry.SecCalculator;
+import org.example.math.trigonometry.SinCalculator;
+import org.example.math.trigonometry.TanCalculator;
+
+import lombok.AllArgsConstructor;
+
+@AllArgsConstructor
+public class MyMath {
+    private final SinCalculator sinCalculator;
+    private final CosCalculator cosCalculator;
+
+    private final TanCalculator tanCalculator;
+    private final CotCalculator cotCalculator;
+
+    private final SecCalculator secCalculator;
+    private final CscCalculator cscCalculator;
+
+    private final LnCalculator lnCalculator;
+    private final LogCalculator logCalculator;
+
+<span class="fc" id="L28">    public MyMath() {</span>
+<span class="fc" id="L29">        this.sinCalculator = new SinCalculator();</span>
+<span class="fc" id="L30">        this.cosCalculator = new CosCalculator();</span>
+<span class="fc" id="L31">        this.tanCalculator = new TanCalculator();</span>
+<span class="fc" id="L32">        this.cotCalculator = new CotCalculator();</span>
+<span class="fc" id="L33">        this.secCalculator = new SecCalculator();</span>
+<span class="fc" id="L34">        this.cscCalculator = new CscCalculator();</span>
+<span class="fc" id="L35">        this.lnCalculator = new LnCalculator();</span>
+<span class="fc" id="L36">        this.logCalculator = new LogCalculator();</span>
+<span class="fc" id="L37">    }</span>
+
+    public double sin(double x) {
+<span class="fc" id="L40">        return sinCalculator.calculate(x);</span>
+    }
+
+    public double sin(double x, double epsilon) {
+<span class="fc" id="L44">        return sinCalculator.calculate(x, epsilon);</span>
+    }
+
+    public double cos(double x) {
+<span class="fc" id="L48">        return cosCalculator.calculate(x);</span>
+    }
+
+    public double cos(double x, double epsilon) {
+<span class="fc" id="L52">        return cosCalculator.calculate(x, epsilon);</span>
+    }
+
+    public double tan(double x) {
+<span class="fc" id="L56">        return tanCalculator.calculate(x);</span>
+    }
+
+    public double tan(double x, double epsilon) {
+<span class="fc" id="L60">        return tanCalculator.calculate(x, epsilon);</span>
+    }
+
+    public double cot(double x) {
+<span class="fc" id="L64">        return cotCalculator.calculate(x);</span>
+    }
+
+    public double cot(double x, double epsilon) {
+<span class="fc" id="L68">        return cotCalculator.calculate(x, epsilon);</span>
+    }
+
+    public double sec(double x) {
+<span class="fc" id="L72">        return secCalculator.calculate(x);</span>
+    }
+
+    public double sec(double x, double epsilon) {
+<span class="fc" id="L76">        return secCalculator.calculate(x, epsilon);</span>
+    }
+
+    public double csc(double x) {
+<span class="fc" id="L80">        return cscCalculator.calculate(x);</span>
+    }
+
+    public double csc(double x, double epsilon) {
+<span class="fc" id="L84">        return cscCalculator.calculate(x, epsilon);</span>
+    }
+
+    public double ln(double x) {
+<span class="fc" id="L88">        return lnCalculator.calculate(x);</span>
+    }
+
+    public double ln(double x, double epsilon) {
+<span class="fc" id="L92">        return lnCalculator.calculate(x, epsilon);</span>
+    }
+
+    public double log(double x, int base) {
+<span class="fc" id="L96">        return logCalculator.calculate(x, base);</span>
+    }
+
+    public double log(double x, int base, double epsilon) {
+<span class="fc" id="L100">        return logCalculator.calculate(x, base, epsilon);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.13.202504020838</span></div></body></html>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>FunctionSystemCalculator.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">app</a> &gt; <a href="index.source.html" class="el_package">org.example.math</a> &gt; <span class="el_source">FunctionSystemCalculator.java</span></div><h1>FunctionSystemCalculator.java</h1><pre class="source lang-java linenums">package org.example.math;
+
+import org.example.math.common.FunctionCalculator;
+import org.example.math.common.FunctionConstants;
+import org.example.math.common.FunctionType;
+import org.example.math.exception.ToleranceException;
+
+public class FunctionSystemCalculator extends FunctionCalculator {
+    private final MyMath math;
+
+    public FunctionSystemCalculator() {
+<span class="fc" id="L12">        super(FunctionType.SYSTEM);</span>
+<span class="fc" id="L13">        this.math = new MyMath();</span>
+<span class="fc" id="L14">    }</span>
+
+    public FunctionSystemCalculator(MyMath math) {
+<span class="fc" id="L17">        super(FunctionType.SYSTEM);</span>
+<span class="fc" id="L18">        this.math = math;</span>
+<span class="fc" id="L19">    }</span>
+
+    @Override
+    protected boolean checkToleranceHit(double x) {
+<span class="fc bfc" id="L23" title="All 2 branches covered.">        if (x &gt; 0) {</span>
+<span class="pc bpc" id="L24" title="2 of 6 branches missed.">            return Double.isFinite(x) &amp;&amp; !Double.isNaN(x) &amp;&amp; x &gt; 0;</span>
+        }
+<span class="pc bpc" id="L26" title="2 of 6 branches missed.">        return Double.isFinite(x) &amp;&amp; !Double.isNaN(x) &amp;&amp; (Math.abs(math.sin(x)) &gt; FunctionConstants.SINGULARITY_EPSILON);</span>
+    }
+
+    @Override
+    public double calculate(double x) {
+<span class="fc bfc" id="L31" title="All 2 branches covered.">        if (!checkToleranceHit(x)) {</span>
+<span class="fc" id="L32">            return Double.NaN;</span>
+        }
+        try {
+
+<span class="fc bfc" id="L36" title="All 2 branches covered.">            if (x &gt; 0) {</span>
+<span class="fc" id="L37">                double result = (((((math.log(x, 10) + math.log(x, 2)) + math.log(x, 3))</span>
+<span class="fc" id="L38">                        - ((math.log(x, 5) + math.log(x, 10)) / (math.log(x, 10) + math.log(x, 2))))</span>
+<span class="fc" id="L39">                        - (((math.log(x, 2) / math.log(x, 5)) / math.log(x, 5)) + math.ln(x)))</span>
+<span class="fc" id="L40">                        + math.ln(x));</span>
+<span class="fc" id="L41">                writeCalculationResult(x, result);</span>
+<span class="fc" id="L42">                return result;</span>
+            }
+
+<span class="fc" id="L45">            double result = ((Math.pow(Math.pow(Math.pow((((((((math.cos(x) / math.csc(x)) / math.csc(x)) / (math.cot(x) / math.cot(x)))</span>
+<span class="fc" id="L46">                    + ((math.sec(x) - math.csc(x)) * math.cos(x)))</span>
+<span class="fc" id="L47">                    + math.cos(x)) / (math.tan(x) / math.cos(x))) * math.sec(x)), 2), 3), 2))</span>
+<span class="fc" id="L48">                    + (((math.sin(x) * Math.pow(math.csc(x), 2)) * math.cot(x)) + math.cot(x)));</span>
+<span class="fc" id="L49">            writeCalculationResult(x, result);</span>
+<span class="fc" id="L50">            return result;</span>
+<span class="fc" id="L51">        } catch (ToleranceException error) {</span>
+<span class="fc" id="L52">            return Double.NaN;</span>
+        }
+
+    }
+
+    @Override
+    public double calculate(double x, double epsilon) {
+<span class="fc bfc" id="L59" title="All 2 branches covered.">        if (!checkToleranceHit(x)) {</span>
+<span class="fc" id="L60">            return Double.NaN;</span>
+        }
+        try {
+<span class="fc bfc" id="L63" title="All 2 branches covered.">            if (x &gt; 0) {</span>
+<span class="fc" id="L64">                double result = (((((math.log(x, 10, epsilon) + math.log(x, 2, epsilon)) + math.log(x, 3, epsilon))</span>
+<span class="fc" id="L65">                        - ((math.log(x, 5, epsilon) + math.log(x, 10, epsilon)) / (math.log(x, 10, epsilon) + math.log(x, 2, epsilon))))</span>
+<span class="fc" id="L66">                        - (((math.log(x, 2, epsilon) / math.log(x, 5, epsilon)) / math.log(x, 5, epsilon)) + math.ln(x, epsilon)))</span>
+<span class="fc" id="L67">                        + math.ln(x, epsilon));</span>
+<span class="fc" id="L68">                writeCalculationResult(x, result);</span>
+<span class="fc" id="L69">                return result;</span>
+            }
+
+<span class="fc" id="L72">            double result = ((Math.pow(Math.pow(Math.pow((((((((math.cos(x, epsilon) / math.csc(x, epsilon)) / math.csc(x, epsilon)) / (math.cot(x, epsilon) / math.cot(x, epsilon)))</span>
+<span class="fc" id="L73">                    + ((math.sec(x, epsilon) - math.csc(x, epsilon)) * math.cos(x, epsilon)))</span>
+<span class="fc" id="L74">                    + math.cos(x, epsilon)) / (math.tan(x, epsilon) / math.cos(x, epsilon))) * math.sec(x, epsilon)), 2), 3), 2))</span>
+<span class="fc" id="L75">                    + (((math.sin(x, epsilon) * Math.pow(math.csc(x, epsilon), 2)) * math.cot(x, epsilon)) + math.cot(x, epsilon)));</span>
+<span class="fc" id="L76">            writeCalculationResult(x, result);</span>
+<span class="fc" id="L77">            return result;</span>
+<span class="fc" id="L78">        } catch (ToleranceException error) {</span>
+<span class="fc" id="L79">            return Double.NaN;</span>
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.13.202504020838</span></div></body></html>

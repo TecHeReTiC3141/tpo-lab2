@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>SeriesExpander.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">app</a> &gt; <a href="index.source.html" class="el_package">org.example.math.series</a> &gt; <span class="el_source">SeriesExpander.java</span></div><h1>SeriesExpander.java</h1><pre class="source lang-java linenums">package org.example.math.series;
+
+import org.example.math.common.FactorialCalculator;
+import org.example.math.common.FunctionCalculator;
+import org.example.math.common.FunctionConstants;
+import org.example.math.common.FunctionType;
+import org.example.math.exception.ToleranceException;
+
+import lombok.extern.slf4j.Slf4j;
+
+<span class="fc" id="L11">@Slf4j</span>
+public abstract class SeriesExpander extends FunctionCalculator {
+    private static final int MAX_TERMS = 1000;
+
+    protected final FactorialCalculator factorialCalculator;
+
+    protected SeriesExpander(FunctionType type) {
+<span class="fc" id="L18">        super(type);</span>
+<span class="fc" id="L19">        this.factorialCalculator = new FactorialCalculator();</span>
+<span class="fc" id="L20">    }</span>
+
+    protected abstract double calculateNthTerm(double x, int n);
+
+    @Override
+    public double calculate(double x) {
+<span class="fc bfc" id="L26" title="All 2 branches covered.">        if (!checkToleranceHit(x)) {</span>
+<span class="fc" id="L27">            throw new ToleranceException(String.format(</span>
+                    &quot;Argument x = %f is out of tolerance range for the '%s' function.&quot;,
+<span class="fc" id="L29">                    x, getFunction().getName()));</span>
+        }
+
+<span class="fc" id="L32">        double result = 0;</span>
+<span class="fc" id="L33">        double delta = 0;</span>
+<span class="fc" id="L34">        double previousTerm = 0;</span>
+<span class="fc" id="L35">        double nextTerm = 0;</span>
+<span class="pc bpc" id="L36" title="1 of 2 branches missed.">        for (int i = 0; i &lt;= MAX_TERMS; i++) {</span>
+<span class="fc" id="L37">            nextTerm = calculateNthTerm(x, i);</span>
+<span class="fc" id="L38">            result = result + nextTerm;</span>
+<span class="fc" id="L39">            delta = Math.abs(nextTerm - previousTerm);</span>
+<span class="fc bfc" id="L40" title="All 2 branches covered.">            if (delta &lt;= FunctionConstants.CONVERGENCE_EPSILON) {</span>
+<span class="fc" id="L41">                break;</span>
+            }
+<span class="fc" id="L43">            previousTerm = nextTerm;</span>
+        }
+
+<span class="fc" id="L46">        return result;</span>
+    }
+
+    @Override
+    public double calculate(double x, double epsilon) {
+<span class="fc bfc" id="L51" title="All 2 branches covered.">        if (!checkToleranceHit(x)) {</span>
+<span class="fc" id="L52">            throw new ToleranceException(String.format(</span>
+                    &quot;Argument x = %f is out of tolerance range for the '%s' function.&quot;,
+<span class="fc" id="L54">                    x, getFunction().getName()));</span>
+        }
+
+<span class="fc" id="L57">        double result = 0;</span>
+<span class="fc" id="L58">        double delta = 0;</span>
+<span class="fc" id="L59">        double previousResult = 0;</span>
+<span class="fc bfc" id="L60" title="All 2 branches covered.">        for (int i = 0; i &lt;= MAX_TERMS; i++) {</span>
+<span class="fc" id="L61">            double nextTerm = calculateNthTerm(x, i);</span>
+<span class="fc" id="L62">            result = result + nextTerm;</span>
+<span class="fc" id="L63">            delta = Math.abs(result - previousResult);</span>
+<span class="fc bfc" id="L64" title="All 2 branches covered.">            if (delta &lt;= epsilon) {</span>
+<span class="fc" id="L65">                break;</span>
+            }
+<span class="fc" id="L67">            previousResult = result;</span>
+        }
+
+<span class="fc" id="L70">        return result;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.13.202504020838</span></div></body></html>
